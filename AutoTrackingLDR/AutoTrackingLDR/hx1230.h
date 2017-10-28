@@ -40,6 +40,7 @@ void hx_send_command(unsigned char _command);
 void hx_set_coordinates(unsigned char _x, unsigned char _y);
 void hx_clear_screen(void);
 void hx_fill_screen(void);
-void hx_write_char(const unsigned char *_character);
+void hx_write_char(const unsigned char _character);
+void hx_write_string(const char *_characters_array);
 
 #endif /* HX1230_H_ */

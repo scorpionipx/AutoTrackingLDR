@@ -38,8 +38,11 @@ SUBDIRS :=
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../adc_driver.c \
+../graphics.c \
 ../hx1230.c \
-../main.c
+../light.c \
+../main.c \
+../pwm_driver.c
 
 
 PREPROCESSING_SRCS += 
@@ -50,23 +53,35 @@ ASM_SRCS +=
 
 OBJS +=  \
 adc_driver.o \
+graphics.o \
 hx1230.o \
-main.o
+light.o \
+main.o \
+pwm_driver.o
 
 OBJS_AS_ARGS +=  \
 adc_driver.o \
+graphics.o \
 hx1230.o \
-main.o
+light.o \
+main.o \
+pwm_driver.o
 
 C_DEPS +=  \
 adc_driver.d \
+graphics.d \
 hx1230.d \
-main.d
+light.d \
+main.d \
+pwm_driver.d
 
 C_DEPS_AS_ARGS +=  \
 adc_driver.d \
+graphics.d \
 hx1230.d \
-main.d
+light.d \
+main.d \
+pwm_driver.d
 
 OUTPUT_FILE_PATH +=AutoTrackingLDR.elf
 
@@ -82,6 +97,12 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
 
 
 
