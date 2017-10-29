@@ -9,10 +9,30 @@
 #include "light.h"
 #include "adc_driver.h"
 
-long int get_light_intensity(uint8_t sensor)
+#define FILTLER_RANK 15
+
+int get_light_intensity(uint8_t sensor)
 {
 	uint16_t adc_value = ADC_get_value(sensor);
-	adc_value = adc_value*((long)1000)/1023;
-	adc_value = 1000 - adc_value;
+	adc_value = percentage_value(adc_value);
 	return adc_value;
+}
+
+int get_filtered_light_intensity(uint8_t sensor)
+{
+	uint16_t adc_value = 0;
+	for(char i = 0; i < FILTLER_RANK; i++)
+	{
+		adc_value += ADC_get_value(sensor);
+	}
+	adc_value /= FILTLER_RANK;
+	adc_value = percentage_value(adc_value);
+	return adc_value;
+}
+
+int percentage_value(int raw_value)
+{
+	raw_value = raw_value*((long)100)/1023;
+	raw_value = 100 - raw_value;
+	return raw_value;
 }

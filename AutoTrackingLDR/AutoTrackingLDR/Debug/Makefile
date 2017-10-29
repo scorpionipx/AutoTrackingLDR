@@ -42,7 +42,8 @@ C_SRCS +=  \
 ../hx1230.c \
 ../light.c \
 ../main.c \
-../pwm_driver.c
+../pwm_driver.c \
+../tracking.c
 
 
 PREPROCESSING_SRCS += 
@@ -57,7 +58,8 @@ graphics.o \
 hx1230.o \
 light.o \
 main.o \
-pwm_driver.o
+pwm_driver.o \
+tracking.o
 
 OBJS_AS_ARGS +=  \
 adc_driver.o \
@@ -65,7 +67,8 @@ graphics.o \
 hx1230.o \
 light.o \
 main.o \
-pwm_driver.o
+pwm_driver.o \
+tracking.o
 
 C_DEPS +=  \
 adc_driver.d \
@@ -73,7 +76,8 @@ graphics.d \
 hx1230.d \
 light.d \
 main.d \
-pwm_driver.d
+pwm_driver.d \
+tracking.d
 
 C_DEPS_AS_ARGS +=  \
 adc_driver.d \
@@ -81,7 +85,8 @@ graphics.d \
 hx1230.d \
 light.d \
 main.d \
-pwm_driver.d
+pwm_driver.d \
+tracking.d
 
 OUTPUT_FILE_PATH +=AutoTrackingLDR.elf
 
@@ -97,6 +102,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
