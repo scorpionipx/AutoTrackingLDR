@@ -34,7 +34,7 @@ int main(void)
 		_delay_ms(100);
 		track();
 		
-		
+		/*
 		if(bit_is_clear(PINB, 6))
 		{
 			OCR1B ++;
@@ -61,6 +61,7 @@ int main(void)
 		{
 			OCR1A --;
 		}
+		*/
     }
 }
 
@@ -85,7 +86,5 @@ void uC_init(void)
 	
 	display_title();
 	display_data_menu();
-	
-	
 }
 

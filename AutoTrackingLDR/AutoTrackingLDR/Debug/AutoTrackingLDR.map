@@ -7,7 +7,7 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o) (__negsi2)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                              C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o (exit)
+                              C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
                               graphics.o (__do_copy_data)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
@@ -43,8 +43,8 @@ light_up_left       0x2               tracking.o
 
 Discarded input sections
 
- .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
- .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
  .text          0x00000000        0x0 adc_driver.o
  .data          0x00000000        0x0 adc_driver.o
  .bss           0x00000000        0x0 adc_driver.o
@@ -67,6 +67,8 @@ Discarded input sections
  .text          0x00000000        0x0 pwm_driver.o
  .data          0x00000000        0x0 pwm_driver.o
  .bss           0x00000000        0x0 pwm_driver.o
+ .text.turn_off_pwm_channels
+                0x00000000        0x8 pwm_driver.o
  .text          0x00000000        0x0 tracking.o
  .data          0x00000000        0x0 tracking.o
  .bss           0x00000000        0x0 tracking.o
@@ -231,7 +233,7 @@ user_signatures  0x00850000         0x00000400         rw !x
 
 Linker script and memory map
 
-LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
 LOAD adc_driver.o
 LOAD graphics.o
 LOAD hx1230.o
@@ -246,7 +248,7 @@ START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a
-LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5\libatmega32a.a
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5\libatmega32a.a
 END GROUP
                 0x00020000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
                 0x0000ffa0                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
@@ -346,9 +348,9 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x97a
+.text           0x00000000      0x92e
  *(.vectors)
- .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
                 0x00000000                __vector_default
                 0x00000000                __vectors
  *(.vectors)
@@ -376,13 +378,13 @@ END GROUP
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000054        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .init0         0x00000054        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
                 0x00000054                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000054        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .init2         0x00000054        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
  *(.init2)
  *(.init3)
  *(.init3)
@@ -401,10 +403,10 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000086        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .init9         0x00000086        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
  *(.init9)
  *(.text)
- .text          0x0000008e        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .text          0x0000008e        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
                 0x0000008e                __vector_1
                 0x0000008e                __vector_12
                 0x0000008e                __bad_interrupt
@@ -472,47 +474,44 @@ END GROUP
                 0x00000488                get_filtered_light_intensity
  .text.uC_init  0x000004e4       0x8a main.o
                 0x000004e4                uC_init
- .text.main     0x0000056e       0x76 main.o
+ .text.main     0x0000056e       0x32 main.o
                 0x0000056e                main
  .text.init_pwm_channels
-                0x000005e4       0x30 pwm_driver.o
-                0x000005e4                init_pwm_channels
+                0x000005a0       0x30 pwm_driver.o
+                0x000005a0                init_pwm_channels
  .text.turn_on_pwm_channels
-                0x00000614        0x8 pwm_driver.o
-                0x00000614                turn_on_pwm_channels
- .text.turn_off_pwm_channels
-                0x0000061c        0x8 pwm_driver.o
-                0x0000061c                turn_off_pwm_channels
- .text.track    0x00000624      0x254 tracking.o
-                0x00000624                track
+                0x000005d0        0x8 pwm_driver.o
+                0x000005d0                turn_on_pwm_channels
+ .text.track    0x000005d8      0x254 tracking.o
+                0x000005d8                track
  .text.libgcc.div
-                0x00000878       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
-                0x00000878                _div
-                0x00000878                __divmodhi4
+                0x0000082c       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodhi4.o)
+                0x0000082c                _div
+                0x0000082c                __divmodhi4
  .text.libgcc.div
-                0x000008a0       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
-                0x000008a0                __divmodsi4
+                0x00000854       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
+                0x00000854                __divmodsi4
  .text.libgcc.div
-                0x000008ce       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
-                0x000008ce                __negsi2
+                0x00000882       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
+                0x00000882                __negsi2
  .text.libgcc.mul
-                0x000008de       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
-                0x000008de                __umulhisi3
+                0x00000892       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000892                __umulhisi3
  .text.libgcc.mul
-                0x000008fc        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_usmulhisi3.o)
-                0x000008fc                __usmulhisi3
-                0x00000900                __usmulhisi3_tail
+                0x000008b0        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_usmulhisi3.o)
+                0x000008b0                __usmulhisi3
+                0x000008b4                __usmulhisi3_tail
  .text.libgcc.div
-                0x0000090a       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x0000090a                __udivmodhi4
+                0x000008be       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x000008be                __udivmodhi4
  .text.libgcc.div
-                0x00000932       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
-                0x00000932                __udivmodsi4
-                0x00000976                . = ALIGN (0x2)
+                0x000008e6       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x000008e6                __udivmodsi4
+                0x0000092a                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000976        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000976                _exit
-                0x00000976                exit
+ .fini9         0x0000092a        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x0000092a                _exit
+                0x0000092a                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -531,21 +530,22 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000976        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000092a        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000097a                _etext = .
+                0x0000092e                _etext = .
 
-.data           0x00800060      0x63a load address 0x0000097a
+.data           0x00800060      0x63a load address 0x0000092e
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
+ *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
                 0x00800060       0x3a graphics.o
  .rodata.HX_character
                 0x0080009a      0x600 hx1230.o
- *(.gnu.linkonce.d*)
+ *(.gnu.linkonce.r*)
                 0x0080069a                . = ALIGN (0x2)
                 0x0080069a                _edata = .
                 0x0080069a                PROVIDE (__data_end, .)
@@ -567,8 +567,8 @@ END GROUP
                 0x008006aa                up_intensity_average
                 0x008006ac                light_up_left
                 0x008006ae                PROVIDE (__bss_end, .)
-                0x0000097a                __data_load_start = LOADADDR (.data)
-                0x00000fb4                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000092e                __data_load_start = LOADADDR (.data)
+                0x00000f68                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008006ae        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -628,7 +628,7 @@ END GROUP
 .note.gnu.avr.deviceinfo
                 0x00000000       0x3c
  .note.gnu.avr.deviceinfo
-                0x00000000       0x3c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+                0x00000000       0x3c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
 
 .note.gnu.build-id
  *(.note.gnu.build-id)
@@ -665,20 +665,20 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x290c
+.debug_info     0x00000000     0x28ed
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
  .debug_info    0x000004e6       0xb7 adc_driver.o
  .debug_info    0x0000059d      0x8ea graphics.o
  .debug_info    0x00000e87      0x4ee hx1230.o
  .debug_info    0x00001375      0x1eb light.o
- .debug_info    0x00001560      0x9dd main.o
- .debug_info    0x00001f3d       0xba pwm_driver.o
- .debug_info    0x00001ff7      0x915 tracking.o
+ .debug_info    0x00001560      0x9be main.o
+ .debug_info    0x00001f1e       0xba pwm_driver.o
+ .debug_info    0x00001fd8      0x915 tracking.o
 
 .debug_abbrev   0x00000000      0xb29
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
  .debug_abbrev  0x000004a3       0x7a adc_driver.o
  .debug_abbrev  0x0000051d       0xe5 graphics.o
  .debug_abbrev  0x00000602      0x180 hx1230.o
@@ -687,16 +687,16 @@ END GROUP
  .debug_abbrev  0x00000a07       0x51 pwm_driver.o
  .debug_abbrev  0x00000a58       0xd1 tracking.o
 
-.debug_line     0x00000000      0xd01
+.debug_line     0x00000000      0xcc1
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x115 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .debug_line    0x00000000      0x115 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
  .debug_line    0x00000115       0xe5 adc_driver.o
  .debug_line    0x000001fa      0x166 graphics.o
  .debug_line    0x00000360      0x376 hx1230.o
  .debug_line    0x000006d6      0x121 light.o
- .debug_line    0x000007f7      0x26c main.o
- .debug_line    0x00000a63       0xfd pwm_driver.o
- .debug_line    0x00000b60      0x1a1 tracking.o
+ .debug_line    0x000007f7      0x22c main.o
+ .debug_line    0x00000a23       0xfd pwm_driver.o
+ .debug_line    0x00000b20      0x1a1 tracking.o
 
 .debug_frame    0x00000000      0x260
  *(.debug_frame)
@@ -708,23 +708,23 @@ END GROUP
  .debug_frame   0x000001ec       0x44 pwm_driver.o
  .debug_frame   0x00000230       0x30 tracking.o
 
-.debug_str      0x00000000      0x65c
+.debug_str      0x00000000      0x668
  *(.debug_str)
- .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32a/avr5/crtatmega32a.o
- .debug_str     0x00000196      0x173 adc_driver.o
-                                0x1a7 (size before relaxing)
- .debug_str     0x00000309       0x98 graphics.o
-                                0x21b (size before relaxing)
- .debug_str     0x000003a1       0xeb hx1230.o
-                                0x2c6 (size before relaxing)
- .debug_str     0x0000048c       0x72 light.o
-                                0x213 (size before relaxing)
- .debug_str     0x000004fe       0x5c main.o
-                                0x2a6 (size before relaxing)
- .debug_str     0x0000055a       0x12 pwm_driver.o
-                                0x1cd (size before relaxing)
- .debug_str     0x0000056c       0xf0 tracking.o
-                                0x2e9 (size before relaxing)
+ .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega32a/avr5/crtatmega32a.o
+ .debug_str     0x00000196      0x17f adc_driver.o
+                                0x1b3 (size before relaxing)
+ .debug_str     0x00000315       0x98 graphics.o
+                                0x227 (size before relaxing)
+ .debug_str     0x000003ad       0xeb hx1230.o
+                                0x2d2 (size before relaxing)
+ .debug_str     0x00000498       0x72 light.o
+                                0x21f (size before relaxing)
+ .debug_str     0x0000050a       0x46 main.o
+                                0x29c (size before relaxing)
+ .debug_str     0x00000550       0x28 pwm_driver.o
+                                0x1d9 (size before relaxing)
+ .debug_str     0x00000578       0xf0 tracking.o
+                                0x2f5 (size before relaxing)
 
 .debug_loc      0x00000000      0x90c
  *(.debug_loc)

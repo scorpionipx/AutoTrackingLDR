@@ -14,13 +14,13 @@ void init_pwm_channels(void)
 	// PB1 and PB2 is now an output
 	
 	 ICR1 = 1249;
-	 // set TOP to 16bit
+	 // set TOP to count 20ms @ 16its
 
 	 OCR1A = 00;
-	 // set PWM for 0% duty cycle @ 16bit
+	 // set PWM for 0% duty cycle @ 16bits
 
 	 OCR1B = 00;
-	 // set PWM for 0% duty cycle @ 16bit
+	 // set PWM for 0% duty cycle @ 16bits
 
 	 TCCR1A &= ~((1 << COM1A1)|(1 << COM1B1));
 	 // make sure pwm signal is off
