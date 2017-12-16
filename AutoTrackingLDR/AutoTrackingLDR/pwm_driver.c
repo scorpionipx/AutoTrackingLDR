@@ -23,7 +23,7 @@ void init_pwm_channels(void)
 	 // set PWM for 0% duty cycle @ 16bits
 
 	 TCCR1A &= ~((1 << COM1A1)|(1 << COM1B1));
-	 // make sure pwm signal is off
+	 // make sure PWM signal is off
 
 	TCCR1B |= (1 << CS12);
 	// START the timer with 256 prescaler

@@ -29,7 +29,7 @@ void track(void)
 {
 	light_up_left = get_filtered_light_intensity(LS_UP_LEFT);
 	light_up_right = get_filtered_light_intensity(LS_UP_RIGHT);
-	light_down_left = get_filtered_light_intensity(LS_DOWN_LEFT) - 5;
+	light_down_left = get_filtered_light_intensity(LS_DOWN_LEFT);
 	light_down_right = get_filtered_light_intensity(LS_DOWN_RIGHT);
 	
 	display_light_sensor_data(LS_UP_LEFT, light_up_left);
